@@ -1,0 +1,34 @@
+<html>
+<head>
+<script type="text/javascript"
+src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {packages: ['wordtree']});
+
+
+google.charts.setOnLoadCallback(drawSimpleNodeChart);
+
+
+function drawSimpleNodeChart () {
+var data =google.visualization.arrayToDataTable (
+[ ['Phrases'],
+["SQL (Structured Query Language) is a powerful and widely-used programming language designed for managing and manipulating relational databases. It allows users to query, update, insert, and delete data from databases. SQL is used by data analysts, database administrators, and developers to interact with structured data stored in tables and ensure that data is organized, accessible, and consistent. SQL operates on the principle of using commands or statements to perform operations such as: SELECT - Retrieves data from one or more tables. INSERT - Adds new data into a table. UPDATE - Modifies existing data within a table. DELETE - Removes data from a table. CREATE - Defines new database objects like tables, views, or indexes. ALTER - Modifies the structure of an existing database object. DROP - Deletes database objects. One of the key strengths of SQL is its ability to handle large datasets efficiently and perform complex queries involving multiple tables, aggregations, and filtering. SQL can also be used to enforce data integrity, ensuring that the data adheres to certain rules or constraints. SQL is essential in various applications, from simple web apps to large-scale enterprise systems, and is supported by virtually all relational database management systems (RDBMS), such as MySQL, PostgreSQL, Microsoft SQL Server, and Oracle. Its versatility, ease of use, and ability to interact with other programming languages make it an indispensable tool for modern data management."
+]]
+);
+var options = {
+wordtree: {
+format:'implicit',
+type: 'double',
+word: 'SQL'
+}
+};
+var wordtree = new
+google.visualization. WordTree(document.getElementById('wordtree_double'));
+wordtree.draw(data, options);
+}
+</script>
+</head>
+<body>
+<div id="wordtree_double" style="width: 1800px; height: 500px;"></div>
+</body>
+</html>
