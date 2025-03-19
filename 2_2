@@ -1,0 +1,32 @@
+<html>
+<head>
+<script type="text/javascript"
+src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {packages: ['wordtree']});
+
+google.charts.setOnLoadCallback(drawSimpleNodeChart);
+
+function drawSimpleNodeChart () {
+var data =google.visualization.arrayToDataTable (
+[ ['Phrases'],
+["A computer is an electronic device that processes data and performs a variety of tasks, including calculations, storing information, and running programs. It is an essential tool in today's world, used in everything from personal activities to complex business operations. At its core, a computer takes input, processes it using a central processing unit (CPU), and then produces an output. The basic components of a computer include: Hardware - The physical parts of a computer, such as the CPU, memory (RAM), storage devices (like hard drives or SSDs), monitors, keyboards, and mice. Hardware provides the necessary infrastructure for the software to run. Software - The programs and operating systems that instruct the hardware on how to perform tasks. Software can range from system software, like operating systems (Windows, macOS, Linux), to application software, like word processors, web browsers, and games. Input Devices - These allow users to interact with the computer. Examples include keyboards, mice, and touchscreens. Output Devices - These present the results of computer operations, such as monitors, printers, or speakers. Computers are capable of performing a wide range of tasks, from simple functions like browsing the internet or editing documents to complex operations like running simulations, analyzing large datasets, and programming. Their speed and accuracy have revolutionized industries such as finance, healthcare, education, and entertainment. The evolution of computers, from early mechanical machines to today's advanced, powerful devices, has dramatically transformed how we work, communicate, and solve problems. Modern computers, which can be desktop machines, laptops, or even smartphones, continue to be integral to our daily lives and are constantly evolving in terms of power, usability, and functionality."
+]]
+);
+var options = {
+wordtree: {
+format:'implicit',
+type: 'double',
+word: 'computer'
+}
+};
+var wordtree = new
+google.visualization. WordTree(document.getElementById('wordtree_double'));
+wordtree.draw(data, options);
+}
+</script>
+</head>
+<body>
+<div id="wordtree_double" style="width: 1800px; height: 500px;"></div>
+</body>
+</html>
